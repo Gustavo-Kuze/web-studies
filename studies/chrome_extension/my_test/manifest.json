@@ -1,0 +1,28 @@
+{
+  "name": "My Test",
+  "description": "This is just a simple test",
+  "version": "1.0",
+  "manifest_version": 2,
+  "browser_action": {
+    
+    "default_icon": "bah.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["content.js"]
+    }
+  ],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens index.html"
+    }
+  }
+}
