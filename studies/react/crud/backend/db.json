@@ -3,11 +3,11 @@
         {
             "id": 1,
             "name": "Arthur Oliveira",
-            "email": "aoliveira@cod3r.com.br"
+            "email": "aoliveira@cod3r.com"
         },
         {
             "id": 2,
-            "name": "Maria Júlia da Silva",
+            "name": "Maria Julia Silva",
             "email": "mjds@empresa.com"
         }
     ]
