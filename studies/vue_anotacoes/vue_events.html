@@ -1,28 +1,31 @@
 <!DOCTYPE html>
 <html>
-
 <head>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <title>Vue Events</title>
     <script src="https://cdn.jsdelivr.net/npm/vue"></script>
 </head>
-
 <body>
     <div id="app">
         <p id="output">
             {{value}}
         </p>
-        
         <!-- Assim como é possível fazer o bind de duas formas (v-bind:href="link" ou :href="link") -->
         <button v-on:click="add">Adicionar 1</button>
         <!-- podemos associar métodos a eventos com sintaxe reduzida (v-on:click ou @click)-->
         <button @click="sub">Subtrair 1</button>
+        <input type="text" placeholder="Clique no enter para o alerta" @keyup.enter="alerta">
+        <p @mousemove="coords">MouseX: {{x}}, MouseY: {{y}}
+            <span @mousemove.stop>Aqui o mouse move não é registrado</span>
+        </p>
     </div>
     <script>
         new Vue({
             el: "#app",
             data: {
-                value: 0
+                value: 0,
+                x: 0,
+                y: 0
             },
             methods: {
                 add(){
@@ -30,10 +33,16 @@
                 },
                 sub(){
                     this.value-- 
+                },
+                alerta(){
+                    alert(`O valor atual é: ${this.value}`)
+                },
+                coords(e){
+                    this.x = e.clientX
+                    this.y = e.clientY
                 }
             }
         })
     </script>
 </body>
-
 </html>

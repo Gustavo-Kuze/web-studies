@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Aplicando Estilo</title>
-    <link rel="stylesheet" href="/css/estilo.css">
-    <script src="/js/vue.min.js"></script>
+    <link rel="stylesheet" href="../exercicios/css/estilo.css">
+    <script src="./js/vue.min.js"></script>
     <style>
         .vermelho {
             background-color: red;
@@ -13,8 +13,21 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <!-- :class é o atributo class controlado pelo view. 
+            as classes "chave" passadas irão ser aplicadas se
+        o valor for verdadeiro -->
+        <p @click="aplicarCor = !aplicarCor" :class="{'vermelho': aplicarCor}">
+            Clique para alternar entre o background colorido ou não
+        </p>
+    </div>
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                aplicarCor: false
+            }
+        })
     </script>
 </body>
 </html>
