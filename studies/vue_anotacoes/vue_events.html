@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Vue Events</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <p id="output">
+            {{value}}
+        </p>
+        
+        <!-- Assim como é possível fazer o bind de duas formas (v-bind:href="link" ou :href="link") -->
+        <button v-on:click="add">Adicionar 1</button>
+        <!-- podemos associar métodos a eventos com sintaxe reduzida (v-on:click ou @click)-->
+        <button @click="sub">Subtrair 1</button>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                value: 0
+            },
+            methods: {
+                add(){
+                    this.value++ /*é obrigatório colocar o this*/
+                },
+                sub(){
+                    this.value-- 
+                }
+            }
+        })
+    </script>
+</body>
+
+</html>

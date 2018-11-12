@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
+    <title>Vue Instance</title>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+
+<body>
+    <div id="app">
+        <input type="text" id="entry" v-model="value">
+        <p id="output1">
+            {{value}}
+        </p>
+        <p id="output2">
+            {{value}}
+        </p>
+    </div>
+    <script>
+        new Vue({
+            el: "#app",
+            data: {
+                value: 0
+            }
+        })
+    </script>
+</body>
+
+</html>
