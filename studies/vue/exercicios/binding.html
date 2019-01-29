@@ -8,8 +8,30 @@
 </head>
 <body class="exercicio">
 
+    <div id="app">
+        <p>Para fazer bind de um link fazemos assim:</p>
+        <a v-bind:href="link">Meu site</a>
+        <p>ou assim:</p>
+        <a :href="link">Meu site</a>
+        <hr />
+        <input type="text" v-model="nome" placeholder="Digite um nome aqui"><br/>
+        <span>{{nome}}</span>
+    </div>
+
     <script>
-        // ...
+        new Vue({
+            el: '#app',
+            data: {
+                link: 'https://www.gustavokuze.com',
+                nome: ''
+            },
+            watch: {
+                nome(novoNome){
+                    // aqui temos um evento toda vez que nome for alterado
+                    console.log(novoNome)
+                }
+            }
+        })
     </script>
 </body>
 </html>
